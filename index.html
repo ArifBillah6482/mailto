@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arif Billah</title>
+    <link rel='stylesheet' href='./mouse.css'>
+    <link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <div class="container">
+        <div class="form">
+            <form action="mailto:arifsakib2743@gmail.com" method="post" enctype="text/plain">
+                <div class="input">
+                    <input type="text" name="Name: " maxlength="50" required autofocus placeholder="Enter Your Name...">
+                </div>
+                <div class="email">
+                    <input type="email" name="Email: " required placeholder="Enter Your Email..." maxlength="100">
+                </div>
+                <div class="textarea">
+                    <textarea name="Message: " id="" cols="30" rows="10" required placeholder="Message....." maxlength="9000"></textarea>
+                </div>
+                <div class="btns">
+                    <div class="send">
+                        <button type="submit">SEND</button>
+                        <button type="reset">RESET</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        const cursor = document.querySelector('.cursor');
+        var timeout;
+        document.addEventListener('mousemove', (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+            clearTimeout(timeout)
+            function timeOut(){
+            cursor.style.display = "none";
+        }
+        timeout = setTimeout(timeOut, 1000);
+        });
+        document.addEventListener('mouseout', () => {
+            cursor.style.display = "none";
+        });    
+        
+    </script>
+</body>
+</html>
